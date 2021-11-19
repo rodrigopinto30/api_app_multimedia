@@ -1,5 +1,6 @@
 const express = require('express');
 const userSchema = require('../models/user');
+
 const router = express.Router();
 
 // Create user
@@ -28,7 +29,7 @@ router.get('/users/:id', (req, res)=>{
         .catch((error)=> res.json({message: error}));
 });
 
-// Update a user
+// Update an user
 router.put('/users/:id', (req, res)=>{
     const {id} = req.params;
     const { name, age, email, password } = req.body;
